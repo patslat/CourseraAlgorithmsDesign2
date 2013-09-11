@@ -30,16 +30,18 @@ def sort_by_greedy_difference(jobs)
 end
 
 def sort_by_greedy_ratio(jobs)
+  # this is wrong right now
   jobs_clone = jobs.clone
   jobs_clone.sort! do |job1, job2|
     job_1_weight, job_1_length = job1
     job_2_weight, job_2_length = job2
 
-    job_1_ratio = job_1_weight / job_1_length
-    job_2_ratio = job_2_weight / job_2_length
+    job_1_ratio = job_1_weight.to_f / job_1_length.to_f
+    job_2_ratio = job_2_weight.to_f / job_2_length.to_f
 
     job_2_ratio <=> job_1_ratio
   end
+  jobs_clone
 end
 
 def job_sum(jobs)

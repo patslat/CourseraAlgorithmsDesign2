@@ -39,4 +39,5 @@ def prim_mst(edges)
 end
 
 num_nodes, num_edges, edges = process_edges("lib/edges.txt")
-
+p "The weight of the minimum spanning tree is: "
+p prim_mst(edges).reduce(0) { |weight, edge| weight += edge[2] }

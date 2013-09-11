@@ -26,6 +26,11 @@ describe "sort_by_greedy_ratio" do
     jobs = [[1, 1], [2, 1], [3, 1]]
     sort_by_greedy_ratio(jobs).should == [[3, 1], [2, 1], [1, 1]]
   end
+
+  it "does the example from class correctly" do
+    jobs = [[3, 5], [1, 2]]
+    job_sum(sort_by_greedy_ratio(jobs)).should == 22
+  end
 end
 
 describe "job_sum" do
